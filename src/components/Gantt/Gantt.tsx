@@ -1,10 +1,10 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 
 interface Props {
   
 }
 
-export default function Gantt({}: Props): ReactElement {
+export const Gantt: React.FC<Props> = ({}: Props) => {
   return (
     <div>
       Gantt Is Work

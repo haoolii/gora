@@ -1,7 +1,7 @@
 import React, { ComponentProps } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import Axis from './Axis';
+import { Axis } from './Axis';
 
 export default {
   title: 'Axis',

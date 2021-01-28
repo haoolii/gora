@@ -1,13 +1,13 @@
-import React, { ReactElement } from 'react'
+import React from 'react'
 
 interface Props {
   
 }
 
-export default function Axis({}: Props): ReactElement {
+export const Axis: React.FC<Props> = ({}) => {
   return (
-    <div>
+    <rect width="100" height="100" x="10" y="10">
       Axis Is Work
-    </div>
+    </rect>
   )
 }

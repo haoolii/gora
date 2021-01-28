@@ -1,15 +1,15 @@
 import React, { ComponentProps } from 'react';
 import { Story, Meta } from '@storybook/react/types-6-0';
 
-import { Gantt } from './Gantt';
+import { Board } from './Board';
 
 export default {
-  title: 'Gantt',
-  component: Gantt,
+  title: 'Board',
+  component: Board,
 } as Meta;
 
-const Template: Story<ComponentProps<typeof Gantt>> = (args) => (
-  <Gantt {...args} />
+const Template: Story<ComponentProps<typeof Board>> = (args) => (
+  <Board {...args} />
 );
 
 export const Primary = Template.bind({});
