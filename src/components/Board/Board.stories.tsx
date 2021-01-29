@@ -14,3 +14,6 @@ const Template: Story<ComponentProps<typeof Board>> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {};
+
+export const DataDev = Template.bind({});
+DataDev.args = {};

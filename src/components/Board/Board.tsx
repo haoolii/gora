@@ -1,4 +1,5 @@
 import React from 'react'
+import { Axis } from '../Axis';
 import './Board.css';
 
 interface Props {
@@ -34,7 +35,9 @@ export const Board: React.FC<Props> = ({
       viewBox={`0 0 ${entireWidth} ${entireHeight}`}
     >
       <g transform={`translate(${margin.left}, ${margin.top})`}>
-        <g className="axisLayer"></g>
+        <g className="axisLayer">
+          <Axis></Axis>
+        </g>
         <g className="ganttLayer"></g>
       </g>
     </svg>
