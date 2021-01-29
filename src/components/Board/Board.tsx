@@ -1,6 +1,6 @@
 import React from 'react'
-import { Axis } from '../Axis';
 import './Board.css';
+import * as d3 from 'd3';
 
 interface Props {
   width: number;
@@ -10,7 +10,9 @@ interface Props {
     right: number;
     bottom: number;
     left: number;
-  }
+  },
+  xScale: d3.ScaleTime<number, number>;
+  yScale: d3.ScaleBand<string>;
 }
 
 const defaultMargin = {
@@ -23,7 +25,9 @@ const defaultMargin = {
 export const Board: React.FC<Props> = ({
   width = 800,
   height = 600,
-  margin = defaultMargin
+  margin = defaultMargin,
+  xScale,
+  yScale
 }: Props) => {
   const entireWidth = width + margin.left + margin.right;
   const entireHeight = height + margin.top + margin.bottom;
@@ -36,7 +40,6 @@ export const Board: React.FC<Props> = ({
     >
       <g transform={`translate(${margin.left}, ${margin.top})`}>
         <g className="axisLayer">
-          <Axis></Axis>
         </g>
         <g className="ganttLayer"></g>
       </g>
