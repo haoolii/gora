@@ -1,1 +1,1 @@
-export * from './AxisTop';
+export * from './AxisLeft';

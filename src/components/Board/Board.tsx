@@ -13,13 +13,15 @@ interface Props {
   },
   xScale: d3.ScaleTime<number, number>;
   yScale: d3.ScaleBand<string>;
+  xAxis: React.FC<any>;
+  yAxis: React.FC<any>;
 }
 
 const defaultMargin = {
-  top: 0,
-  right: 0,
-  bottom: 0,
-  left: 0
+  top: 15,
+  right: 15,
+  bottom: 15,
+  left: 15
 };
 
 export const Board: React.FC<Props> = ({
@@ -27,7 +29,9 @@ export const Board: React.FC<Props> = ({
   height = 600,
   margin = defaultMargin,
   xScale,
-  yScale
+  yScale,
+  xAxis,
+  yAxis
 }: Props) => {
   const entireWidth = width + margin.left + margin.right;
   const entireHeight = height + margin.top + margin.bottom;
@@ -40,6 +44,18 @@ export const Board: React.FC<Props> = ({
     >
       <g transform={`translate(${margin.left}, ${margin.top})`}>
         <g className="axisLayer">
+          { xAxis({
+            scale: xScale,
+            width: width,
+            height: height
+          }) }
+          {
+            yAxis({
+              scale: yScale,
+              width: width,
+              height: height
+            })
+          }
         </g>
         <g className="ganttLayer"></g>
       </g>
