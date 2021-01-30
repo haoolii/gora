@@ -19,7 +19,5 @@ const Template: Story<ComponentProps<typeof AxisBottom>> = (args) => (
 
 export const Primary = Template.bind({});
 Primary.args = {
-  width: 800,
-  height: 600,
   scale: d3.scaleTime().domain([new Date(2021, 0, 29), new Date(2021, 11, 31)]).range([0, 800]).nice(),
 };

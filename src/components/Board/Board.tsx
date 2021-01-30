@@ -35,7 +35,7 @@ export const Board: React.FC<Props> = ({
 }: Props) => {
   const entireWidth = width + margin.left + margin.right;
   const entireHeight = height + margin.top + margin.bottom;
-  
+
   return (
     <svg 
       width={entireWidth}
@@ -44,17 +44,11 @@ export const Board: React.FC<Props> = ({
     >
       <g transform={`translate(${margin.left}, ${margin.top})`}>
         <g className="axisLayer">
-          { xAxis({
-            scale: xScale,
-            width: width,
-            height: height
-          }) }
           {
-            yAxis({
-              scale: yScale,
-              width: width,
-              height: height
-            })
+            xAxis({ scale: xScale, key: width})
+          }
+          {
+            yAxis({ scale: yScale, key: height})
           }
         </g>
         <g className="ganttLayer"></g>
